@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NP_Low_Edition.Control;
 
 
 namespace NP_Low_Edition.Menus
@@ -20,11 +21,9 @@ namespace NP_Low_Edition.Menus
             InitializeComponent();
         }
 
-        private FileStream fs;
         private string fileToHide;
         private string fileThatHide;
-        private StreamReader sr;
-        private StreamWriter sw;
+        private Cmd cmd;
         private void browserFile(object sender, EventArgs e)
         {
             if(openFileDialog.ShowDialog() == DialogResult.OK)
@@ -57,7 +56,8 @@ namespace NP_Low_Edition.Menus
                 }
                 else
                 {
-                    executarCMD("COPY /b "+fileThatHide+" +"+fileToHide+" "+fileThatHide);
+                    cmd = new Cmd();
+                    cmd.executarCMD("COPY /b "+fileThatHide+" +"+fileToHide+" "+fileThatHide);
                     progressBar.Maximum = 100;
                     progressBar.Increment(100);
                     MessageBox.Show("Pronto!");
@@ -68,18 +68,6 @@ namespace NP_Low_Edition.Menus
             }
         }
 
-        private void executarCMD(string command)
-        {
-            Process cmd = new Process();
-
-            cmd.StartInfo.FileName = Environment.GetEnvironmentVariable("comspec");
-
-            cmd.StartInfo.Arguments = string.Format("/c {0}", command);
-            cmd.StartInfo.RedirectStandardOutput = false;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.StartInfo.CreateNoWindow = true;
-
-            cmd.Start();
-        }
+       
     }
 }

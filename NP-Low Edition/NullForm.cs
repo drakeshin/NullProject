@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NP_Low_Edition.Menus;
+using System.Diagnostics;
+using NP_Low_Edition.Control;
 namespace NP_Low_Edition
 {
     public partial class NullProject : Form
@@ -16,6 +18,8 @@ namespace NP_Low_Edition
         {
             InitializeComponent();
         }
+
+        private Cmd cmd;
 
         /// <summary>
         /// Somente evento para caso o chackbox estiver marcado, ele vai em tray
@@ -76,5 +80,13 @@ namespace NP_Low_Edition
             EsconderArquivos formE = new EsconderArquivos();
             formE.Show();
         }
+
+        private void abrirCalcClick(object sender, EventArgs e)
+        {
+            cmd = new Cmd();
+            cmd.executarCMD("Calc.exe");
+        }
+
+        
     }
 }

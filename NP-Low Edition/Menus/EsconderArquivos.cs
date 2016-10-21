@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -20,30 +21,24 @@ namespace NP_Low_Edition.Menus
         }
 
         private FileStream fs;
-        private Stream stream;
-        private StreamReader srH;
+        private string fileToHide;
+        private string fileThatHide;
         private StreamReader sr;
         private StreamWriter sw;
         private void browserFile(object sender, EventArgs e)
         {
             if(openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
-                sr = new StreamReader(openFileDialog.FileName);
-                Stream hue =sr.BaseStream;
+                arquivoPego.Text = "";
                 arquivoPego.Text = openFileDialog.FileName;
-                sr.Close();
-                fs = new FileStream(hue, FileMode.OpenOrCreate);
-                
-                if(srH.ToString() == "")
+                fileToHide = openFileDialog.FileName.ToString();
+
+
+                if (fileThatHide == "")
                 {
                     MessageBox.Show("Selecione o arquivo de saida");
                 }
-                else
-                {
-                    fs.CopyTo(stream);
-                    fs.Close();
-                }
+                
             }
         }
 
@@ -51,12 +46,36 @@ namespace NP_Low_Edition.Menus
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                srH = new StreamReader(openFileDialog.FileName);
+                pathArquivoEsconde.Text = "";
+                
                 pathArquivoEsconde.Text = openFileDialog.FileName;
-                stream = srH.BaseStream;
+                fileThatHide = openFileDialog.FileName.ToString();
+
+                if(fileToHide == "")
+                {
+                    MessageBox.Show("Selecione o arquivo de entrada");
+                }
+                else
+                {
+                    executarCMD("COPY /b "+fileThatHide+" +"+fileToHide+" "+fileThatHide);
+                }
                 
 
             }
+        }
+
+        private void executarCMD(string command)
+        {
+            Process cmd = new Process();
+
+            cmd.StartInfo.FileName = Environment.GetEnvironmentVariable("comspec");
+
+            cmd.StartInfo.Arguments = string.Format("/c {0}", command);
+            cmd.StartInfo.RedirectStandardOutput = false;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.StartInfo.CreateNoWindow = true;
+
+            cmd.Start();
         }
     }
 }

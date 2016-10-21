@@ -26,5 +26,12 @@ namespace NP_Low_Edition.Menus
             textGetInfo.Text = cmd.execCMD("arp -a");
 
         }
+
+        private void reloadClick(object sender, EventArgs e)
+        {
+            textGetInfo.Text = "";
+            cmd = new Cmd();
+            textGetInfo.Text = cmd.execCMD("arp -a");
+        }
     }
 }

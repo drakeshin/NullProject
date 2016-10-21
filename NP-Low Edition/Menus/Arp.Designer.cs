@@ -48,6 +48,7 @@
             this.updateBt.Size = new System.Drawing.Size(464, 34);
             this.updateBt.TabIndex = 1;
             this.updateBt.UseVisualStyleBackColor = true;
+            this.updateBt.Click += new System.EventHandler(this.reloadClick);
             // 
             // ArpForm
             // 

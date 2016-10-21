@@ -41,6 +41,7 @@
             this.App = new System.Windows.Forms.TabPage();
             this.calcAbrirBT = new System.Windows.Forms.Button();
             this.processoMain = new System.Diagnostics.Process();
+            this.arpProtocolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabApp.SuspendLayout();
             this.App.SuspendLayout();
@@ -82,6 +83,8 @@
             // 
             // redeToolStripMenuItem
             // 
+            this.redeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arpProtocolToolStripMenuItem});
             this.redeToolStripMenuItem.Name = "redeToolStripMenuItem";
             this.redeToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.redeToolStripMenuItem.Text = "Rede";
@@ -145,6 +148,13 @@
             this.processoMain.StartInfo.UserName = "";
             this.processoMain.SynchronizingObject = this;
             // 
+            // arpProtocolToolStripMenuItem
+            // 
+            this.arpProtocolToolStripMenuItem.Name = "arpProtocolToolStripMenuItem";
+            this.arpProtocolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.arpProtocolToolStripMenuItem.Text = "Arp Protocol";
+            this.arpProtocolToolStripMenuItem.Click += new System.EventHandler(this.openArpForm);
+            // 
             // NullProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +190,7 @@
         private System.Windows.Forms.TabPage App;
         private System.Windows.Forms.Button calcAbrirBT;
         private System.Diagnostics.Process processoMain;
+        private System.Windows.Forms.ToolStripMenuItem arpProtocolToolStripMenuItem;
     }
 }
 

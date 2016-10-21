@@ -24,5 +24,20 @@ namespace NP_Low_Edition.Control
             cmd.Start();
         }
 
+        public string execCMD(string command)
+        {
+            cmd = new Process();
+
+            cmd.StartInfo.FileName = Environment.GetEnvironmentVariable("comspec");
+            cmd.StartInfo.Arguments = string.Format("/c {0}", command);
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.StartInfo.CreateNoWindow = true;
+
+            cmd.Start();
+            string returnedCmd = cmd.StandardOutput.ReadToEnd();
+            return returnedCmd;
+        }
+
     }
 }

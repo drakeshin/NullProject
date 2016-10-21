@@ -58,6 +58,10 @@ namespace NP_Low_Edition.Menus
                 else
                 {
                     executarCMD("COPY /b "+fileThatHide+" +"+fileToHide+" "+fileThatHide);
+                    progressBar.Maximum = 100;
+                    progressBar.Increment(100);
+                    MessageBox.Show("Pronto!");
+                    
                 }
                 
 

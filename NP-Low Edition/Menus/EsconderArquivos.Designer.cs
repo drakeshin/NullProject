@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EsconderArquivos));
             this.browserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.getItemBt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,7 +117,12 @@
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.getItemBt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(551, 216);
+            this.MinimumSize = new System.Drawing.Size(551, 216);
             this.Name = "EsconderArquivos";
+            this.Text = "Esconder Arquivo";
             this.ResumeLayout(false);
             this.PerformLayout();
 

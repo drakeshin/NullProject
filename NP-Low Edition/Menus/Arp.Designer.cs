@@ -28,24 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArpForm));
             this.textGetInfo = new System.Windows.Forms.TextBox();
             this.updateBt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textGetInfo
             // 
-            this.textGetInfo.Location = new System.Drawing.Point(12, 12);
+            this.textGetInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textGetInfo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textGetInfo.Location = new System.Drawing.Point(0, 0);
             this.textGetInfo.Multiline = true;
             this.textGetInfo.Name = "textGetInfo";
+            this.textGetInfo.ReadOnly = true;
             this.textGetInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textGetInfo.Size = new System.Drawing.Size(464, 205);
+            this.textGetInfo.Size = new System.Drawing.Size(488, 206);
             this.textGetInfo.TabIndex = 0;
             // 
             // updateBt
             // 
-            this.updateBt.Location = new System.Drawing.Point(12, 223);
+            this.updateBt.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.updateBt.Image = ((System.Drawing.Image)(resources.GetObject("updateBt.Image")));
+            this.updateBt.Location = new System.Drawing.Point(0, 206);
             this.updateBt.Name = "updateBt";
-            this.updateBt.Size = new System.Drawing.Size(464, 34);
+            this.updateBt.Size = new System.Drawing.Size(488, 34);
             this.updateBt.TabIndex = 1;
             this.updateBt.UseVisualStyleBackColor = true;
             this.updateBt.Click += new System.EventHandler(this.reloadClick);
@@ -54,11 +60,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 264);
-            this.Controls.Add(this.updateBt);
+            this.ClientSize = new System.Drawing.Size(488, 240);
             this.Controls.Add(this.textGetInfo);
+            this.Controls.Add(this.updateBt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ArpForm";
-            this.Text = "Arping Your Network";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Arp Protocol";
             this.Load += new System.EventHandler(this.onLoad);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -7,9 +7,19 @@ using System.Diagnostics;
 
 namespace NP_Low_Edition.Control
 {
+    /*
+    REVER O DESCONSTRUTOR E OTIMIZAR O USO DE MEMÓRIA DA MÁQUINA
+    */
     class Cmd
     {
         private Process cmd;
+        private string returnedCmd;
+
+        ~Cmd()
+        {
+            cmd = null;
+            returnedCmd = null;
+        }
         public void executarCMD(string command)
         {
             cmd = new Process();
@@ -35,7 +45,9 @@ namespace NP_Low_Edition.Control
             cmd.StartInfo.CreateNoWindow = true;
 
             cmd.Start();
-            string returnedCmd = cmd.StandardOutput.ReadToEnd();
+            returnedCmd = cmd.StandardOutput.ReadToEnd();
+            byte[] bytes = Encoding.ASCII.GetBytes(returnedCmd);
+            returnedCmd = Encoding.UTF8.GetString(bytes);
             return returnedCmd;
         }
 

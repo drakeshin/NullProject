@@ -35,13 +35,14 @@
             this.processosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esconderArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arpProtocolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trayCheckBox = new System.Windows.Forms.CheckBox();
             this.lookTrayIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabApp = new System.Windows.Forms.TabControl();
             this.App = new System.Windows.Forms.TabPage();
             this.calcAbrirBT = new System.Windows.Forms.Button();
             this.processoMain = new System.Diagnostics.Process();
-            this.arpProtocolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesDeIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabApp.SuspendLayout();
             this.App.SuspendLayout();
@@ -84,10 +85,18 @@
             // redeToolStripMenuItem
             // 
             this.redeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arpProtocolToolStripMenuItem});
+            this.arpProtocolToolStripMenuItem,
+            this.configuraçõesDeIPToolStripMenuItem});
             this.redeToolStripMenuItem.Name = "redeToolStripMenuItem";
             this.redeToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.redeToolStripMenuItem.Text = "Rede";
+            // 
+            // arpProtocolToolStripMenuItem
+            // 
+            this.arpProtocolToolStripMenuItem.Name = "arpProtocolToolStripMenuItem";
+            this.arpProtocolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arpProtocolToolStripMenuItem.Text = "Arp Protocol";
+            this.arpProtocolToolStripMenuItem.Click += new System.EventHandler(this.openArpForm);
             // 
             // trayCheckBox
             // 
@@ -148,12 +157,12 @@
             this.processoMain.StartInfo.UserName = "";
             this.processoMain.SynchronizingObject = this;
             // 
-            // arpProtocolToolStripMenuItem
+            // configuraçõesDeIPToolStripMenuItem
             // 
-            this.arpProtocolToolStripMenuItem.Name = "arpProtocolToolStripMenuItem";
-            this.arpProtocolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.arpProtocolToolStripMenuItem.Text = "Arp Protocol";
-            this.arpProtocolToolStripMenuItem.Click += new System.EventHandler(this.openArpForm);
+            this.configuraçõesDeIPToolStripMenuItem.Name = "configuraçõesDeIPToolStripMenuItem";
+            this.configuraçõesDeIPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configuraçõesDeIPToolStripMenuItem.Text = "Configurações de IP";
+            this.configuraçõesDeIPToolStripMenuItem.Click += new System.EventHandler(this.abrirFormIpConfig);
             // 
             // NullProject
             // 
@@ -191,6 +200,7 @@
         private System.Windows.Forms.Button calcAbrirBT;
         private System.Diagnostics.Process processoMain;
         private System.Windows.Forms.ToolStripMenuItem arpProtocolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesDeIPToolStripMenuItem;
     }
 }
 

@@ -92,5 +92,11 @@ namespace NP_Low_Edition
             ArpForm form = new ArpForm();
             form.Show();
         }
+
+        private void abrirFormIpConfig(object sender, EventArgs e)
+        {
+            IPconfigForm form = new IPconfigForm();
+            form.Show();
+        }
     }
 }

@@ -67,6 +67,12 @@
     <Compile Include="Menus\Arp.Designer.cs">
       <DependentUpon>Arp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menus\IPconfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\IPconfig.Designer.cs">
+      <DependentUpon>IPconfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="NullForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Menus\Arp.resx">
       <DependentUpon>Arp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\IPconfig.resx">
+      <DependentUpon>IPconfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NullForm.resx">
       <DependentUpon>NullForm.cs</DependentUpon>

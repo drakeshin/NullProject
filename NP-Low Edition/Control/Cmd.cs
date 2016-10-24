@@ -46,8 +46,9 @@ namespace NP_Low_Edition.Control
 
             cmd.Start();
             returnedCmd = cmd.StandardOutput.ReadToEnd();
-            byte[] bytes = Encoding.ASCII.GetBytes(returnedCmd);
+            byte[] bytes = Encoding.Default.GetBytes(returnedCmd);
             returnedCmd = Encoding.UTF8.GetString(bytes);
+           
             return returnedCmd;
         }
 

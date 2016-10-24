@@ -36,6 +36,7 @@
             // ipConfigBox
             // 
             this.ipConfigBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ipConfigBox.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ipConfigBox.Location = new System.Drawing.Point(0, 0);
             this.ipConfigBox.Multiline = true;
             this.ipConfigBox.Name = "ipConfigBox";
